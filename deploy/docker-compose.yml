@@ -1,0 +1,22 @@
+version: "3.9"
+
+services:
+  tradingbot:
+    image: tradingbot:0.0.1
+    container_name: tradingbot
+    restart: unless-stopped
+    environment:
+      TZ: UTC
+      LogLevel: INFO
+
+      Exchange: Binance
+      Symbol: BTCUSDT
+
+    volumes:
+      - ../../../.env:/root/.env:ro
+    networks:
+      - go_dev
+
+networks:
+  go_dev:
+    external: true
