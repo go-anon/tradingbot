@@ -1,0 +1,2 @@
+# tradingbot
+Bot for trading
